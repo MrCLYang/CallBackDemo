@@ -3,6 +3,8 @@ package com.lfkj.callbackdemo.Test06;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -29,12 +31,17 @@ import com.lfkj.callbackdemo.R;
  */
 public class B extends Activity implements A.Callback {
     private static final String TAG="BBBBBBB";
+
+
     //A类的实例的引用
     private A mA;
+    private TextView content;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        content = findViewById(R.id.content);
 //        TODO 写法一
       /*  A mA=new A();
         mA.setmCallback(new A.Callback() {
@@ -57,7 +64,9 @@ public class B extends Activity implements A.Callback {
     @Override
     public void doSomething() {
         Log.d(TAG, "doSomething: "+"杨成雷");
+        content.setText("我是谁，"+"\n我是杨成雷");
     }
+
 
 
 

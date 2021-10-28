@@ -22,9 +22,4 @@ public class A {
     public void onExecute(){
         mCallback.doSomething();
     }
-
-
-
-
-
 }
